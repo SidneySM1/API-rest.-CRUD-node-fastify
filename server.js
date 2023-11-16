@@ -1,19 +1,7 @@
-/*import {createServer} from 'node:http';
-
-const server = createServer((req, res)=>{
-    res.write('oi')
-
-    return res.end()
-});
-
-server.listen(3333);
-*/
 import { fastify } from 'fastify';
-//import { DatabaseMemory} from './database-memory.js'
 import { DatabasePostgres} from './database-postgres.js'
 
 const server = fastify()
-//const database = new DatabaseMemory()
 const database = new DatabasePostgres()
 
 server.post('/videos', async (request, reply) => {
